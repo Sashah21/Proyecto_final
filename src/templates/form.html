@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+</head>
+<body>
+    <div>
+        <form class="form" action="POST">
+            <h1>Crear Usuario</h1>
+            <input type="text" name="nombre" id="name" placeholder="Nombre" required>
+            <div></div>
+            <input type="text" name="apellidos" id="surname" placeholder="Apellidos"required>
+            <div></div>
+            <input type="email" name="email" id="email" placeholder="correo electronico" required>
+            <div></div>
+            <input type="password" name="password" id="contraseña" placeholder="Contraseña" required>
+            <div></div>
+            <input type="text" name="telefono" id="tfno." pattern="[0-9]{9}" placeholder="Numero de telefono" required>
+            <div></div>
+            <label>Fecha de nacimiento<input type="date" name="" id="" required></label>
+            <div></div>
+            <input type="submit" value="submit" required>
+            <button type="button">Cancel</button>
+        </form>
+    </div>
+</body>
+</html>

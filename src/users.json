@@ -1,0 +1,19 @@
+[
+    {
+    "nombre" : "john",
+    "apellidos" : "Doe",
+    "email" : "example@gmail.com",
+    "contraseña" : "password",
+    "telefono" : 123456789,
+    "edad" : 33
+    },
+    {
+    "nombre" : "juana",
+    "apellidos" : "Doedoe",
+    "email" : "example2@gmail.com",
+    "contraseña" : "contra",
+    "telefono" : 987654321,
+    "edad" : 22
+    }
+]
+

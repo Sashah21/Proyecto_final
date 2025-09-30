@@ -2,48 +2,45 @@
 <html>
     <head>
         <title>Usuarios</title>
-        <link rel="stylesheet"  href="{{ url_for('static', filename='style.css') }}" />
+        <link rel="stylesheet"  href="{{ url_for('static', filename='table-style.css') }}" />
     </head>
     <body>
         <h1>Usuarios en el sistema.</h1>
         <div class="usuarios" role="region" tabindex="0">
-        <table>
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Email</th>
-                    <th>Contraseña</th>
-                    <th>Telefono</th>
-                    <th>Edad</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th id = "cabecera-tl">Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Email</th>
+                        <th>Contraseña</th>
+                        <th>Telefono</th>
+                        <th id = "cabecera-tr">Edad</th>
+                    </tr>
+                </thead>
+                {% if usuarios%}
+                <tbody>
+                    {% for usuario in usuarios %}
+                    <tr>
+                        <td>{{usuario.nombre}}</td>
+                        <td>{{usuario.apellidos}}</td>
+                        <td>{{usuario.email}}</td>
+                        <td>{{usuario.contraseña}}</td>
+                        <td>{{usuario.telefono}}</td>
+                        <td>{{usuario.edad}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                {% else %}
+                <tbody>
+                    <tr>
+                        <td colspan="6" id="no_data_message">No se han encontrado usuarios en el sistema</td>
+                    </tr>
+                </tbody>
+                {% endif %}
+            </table>
+            <button type="button" id="crear_usuario">Crear un usuario</button>
+        </div>
         <div style="margin-top:8px"></div>
     </body>
 </html>
