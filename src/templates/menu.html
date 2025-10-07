@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+    <title>Menu</title>
+</head>
+<body>
+    <div>
+        <h1>Lista de usuarios</h1>
+        <table>
+            <tbody>
+                <tr>
+                    <td><a href="{{ url_for('lista_usuarios')}}" id="lista_de_usuarios">Ver lista de usuarios</a></td>
+                </tr>
+                <tr>
+                    <td><a href="{{ url_for('formulario_usuario')}}" id="formulario">Crear un nuevo usuario</a></td>
+                </tr>   
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

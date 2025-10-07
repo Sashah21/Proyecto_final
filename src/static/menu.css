@@ -1,0 +1,31 @@
+body{
+    background-color: #3A796E;
+}
+h1{
+    color: #ffffff;
+    background-color: #009879;
+    margin: 5% 20%;
+    padding: 0.5% 0.5%;
+    width: 50%;
+    border-radius: 12px;
+    border-color: #d6d6d6;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+}
+a{
+    /*Eliminar formato de enlace*/
+    display: inline-block;
+    text-decoration: none;
+    /*___________________*/
+    background-color: #9b9b9b;
+    color: white;
+    border: 1px solid #cacaca;
+    padding: 2%;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+table{
+    width: 50%;
+    margin: 5% 20%;
+    background-color: #cacaca;
+}

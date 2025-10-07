@@ -1,19 +1,29 @@
 [
     {
-    "nombre" : "john",
-    "apellidos" : "Doe",
-    "email" : "example@gmail.com",
-    "contraseña" : "password",
-    "telefono" : 123456789,
-    "edad" : 33
+        "nombre": "john",
+        "apellidos": "Doe",
+        "email": "example@gmail.com",
+        "contrase\u00f1a": "password",
+        "telefono": 123456789,
+        "edad": 33,
+        "id": 1
     },
     {
-    "nombre" : "juana",
-    "apellidos" : "Doedoe",
-    "email" : "example2@gmail.com",
-    "contraseña" : "contra",
-    "telefono" : 987654321,
-    "edad" : 22
+        "nombre": "juana",
+        "apellidos": "Doedoe",
+        "email": "example2@gmail.com",
+        "contrase\u00f1a": "contra",
+        "telefono": 987654321,
+        "edad": 22,
+        "id": 2
+    },
+    {
+        "nombre": "Aessaneh",
+        "apellidos": "nomas",
+        "email": "aessaneh@gmail.com",
+        "contrase\u00f1a": "asdsaasdsdasda",
+        "telefono": "123456789",
+        "edad": "2025-10-08",
+        "id": 3
     }
 ]
-

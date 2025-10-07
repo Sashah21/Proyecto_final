@@ -1,10 +1,87 @@
+/*Color de fondo*/
 body{
-    background-color: #274e33;
+    background-color: #3A796E;
 }
+/*Formulario*/
 .form{
-    background-color: #c2c2c2;
-    margin: 0 10%;
+    background-color: #ffffff;
+    margin: 5% 20%;
     padding: 2%;
     border-radius: 7px;
-    box-shadow: #000000;
+    box-shadow: 0 0 5px 0 #000000;
+}
+section{
+    padding: 2%;
+}
+/*Formulario - str Crear usuario */
+.header-form{
+    font-family: sans-serif;
+    padding-left: 7%;
+}
+/*Formulario - campos*/
+.body-form{
+    margin: 0 5%;
+    width: 90% ;
+}
+.body-form input{
+    width: 90%;
+    color: #333333;
+    border: 1px solid #cccccc;
+    border-color: #ececec;
+    border-radius: 8px;
+    padding: 2%;
+    font-size: 120%;
+    margin: 10px 0;
+}
+.body-form input:focus{
+    border-color: #0069A7;
+    box-shadow: 0 0 5px 0 #0069A7;
+    outline: none;
+}
+.body-form input[type="date"]{
+    width: 25%;
+    margin-left: 5%;
+    font-size: 120%;
+}
+.body-form input[type="submit"]{
+    background-color: #0069A7;
+    color: #ffffff;
+    width: 70%;
+    margin: 0 5% 0 0 ;
+}
+.body-form input[type="submit"]:hover{
+    border-color: #0069A7;
+    background-color: #005c91;
+    box-shadow: 0 0 5px 0 #0069A7;
+    outline: none;
+}
+label#date-str{
+    font-family: sans-serif;
+}
+/*Formulario - error*/
+.alerta-error {
+    background-color: #f8d7da; 
+    color: #721c24;             
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+/*Formulario - volver*/
+a#volver{
+    /*Eliminar formato de enlace*/
+    display: inline-block;
+    text-decoration: none;
+    /*___________*/
+    background-color: #677177;
+    color: white;
+    border: none;
+    padding: 2%;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+a#volver:hover{
+    background-color: #3b4042;
 }

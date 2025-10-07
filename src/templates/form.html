@@ -8,23 +8,39 @@
 </head>
 <body>
     <div>
-        <form class="form" action="POST">
-            <h1>Crear Usuario</h1>
-            <input type="text" name="nombre" id="name" placeholder="Nombre" required>
-            <div></div>
-            <input type="text" name="apellidos" id="surname" placeholder="Apellidos"required>
-            <div></div>
-            <input type="email" name="email" id="email" placeholder="correo electronico" required>
-            <div></div>
-            <input type="password" name="password" id="contraseña" placeholder="Contraseña" required>
-            <div></div>
-            <input type="text" name="telefono" id="tfno." pattern="[0-9]{9}" placeholder="Numero de telefono" required>
-            <div></div>
-            <label>Fecha de nacimiento<input type="date" name="" id="" required></label>
-            <div></div>
-            <input type="submit" value="submit" required>
-            <button type="button">Cancel</button>
-        </form>
+            <form class="form" action="{{ url_for('formulario_usuario') }}" method="POST">
+                <section>
+                    <h1 class="header-form">Crear Usuario</h1>
+                    <div class="body-form">
+                        <input type="text" name="nombre" id = "name" placeholder="Nombre*" title="Nombre"required>
+                    </div>            
+                    <div class="body-form">
+                        <input type="text" name="apellidos" id = "surname" placeholder="Apellidos*" title="Apellidos"required>
+                    </div>
+                    <div class="body-form">
+                        <input type="email" name="email" id = "email" placeholder="Correo electronico*"title="Correo electronico" required>
+                    </div>
+                    
+                    <div class="body-form">
+                        <input type="password" name="contraseña" id = "contraseña" placeholder="Contraseña*" title="Contraseña" required>
+                    </div>
+                    
+                    <div class="body-form">
+                        <input type="text" name="tfno" id = "tfno" pattern="[0-9]{9}" placeholder="Numero de telefono*" title="Numero de telefono" required>
+                    </div>
+                    <div class="body-form date-form">
+                        <label id="date-str">Fecha de nacimiento<input type="date" name="edad" id="age" title="Fecha de nacimiento" required></label>
+                    </div>
+                    <div class="body-form">
+                        <input type="submit" value="submit" required><a href="{{ url_for('root')}}" id="volver">Volver al menu</a>
+                    </div>
+                    {% if error %}
+                        <div class="alerta-error">
+                            Error: {{ error }}
+                        </div>
+                    {% endif %}
+                </section>
+            </form>
     </div>
 </body>
 </html>

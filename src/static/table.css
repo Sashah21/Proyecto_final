@@ -60,7 +60,11 @@ h1{
     color: #000000;
 }
 /*Boton Crear usuario*/
-button#crear_usuario {
+a#crear_usuario {
+    /*Eliminar formato de enlace*/
+    display: inline-block;
+    text-decoration: none;
+    /*___________*/
     background-color: #392594;
     color: white;
     border: none;
@@ -69,7 +73,7 @@ button#crear_usuario {
     cursor: pointer;
     transition: background-color 0.3s;
 }
-button#crear_usuario:hover{
+#crear_usuario:hover{
     background-color: #2a1b69;
 }
 td#no_data_message {

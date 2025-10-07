@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Usuarios</title>
-        <link rel="stylesheet"  href="{{ url_for('static', filename='table-style.css') }}" />
+        <link rel="stylesheet"  href="{{ url_for('static', filename='table.css') }}" />
     </head>
     <body>
         <h1>Usuarios en el sistema.</h1>
@@ -10,12 +10,12 @@
             <table>
                 <thead>
                     <tr>
-                        <th id = "cabecera-tl">Nombre</th>
+                        <th>Nombre</th>
                         <th>Apellidos</th>
                         <th>Email</th>
                         <th>Contraseña</th>
                         <th>Telefono</th>
-                        <th id = "cabecera-tr">Edad</th>
+                        <th>Edad</th>
                     </tr>
                 </thead>
                 {% if usuarios%}
@@ -39,7 +39,7 @@
                 </tbody>
                 {% endif %}
             </table>
-            <button type="button" id="crear_usuario">Crear un usuario</button>
+            <a href="{{ url_for('formulario_usuario')}}" id="crear_usuario">Crear un usuario</a>
         </div>
         <div style="margin-top:8px"></div>
     </body>
