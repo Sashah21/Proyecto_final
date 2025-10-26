@@ -1,5 +1,5 @@
 from datetime import datetime, date
-import re
+import re, hashlib, os
 
 def formato_fecha(fecha:str) -> int|None:
     #https://docs.python.org/3/library/datetime.html
@@ -15,13 +15,14 @@ def formato_fecha(fecha:str) -> int|None:
     except ValueError:
         return None
     
-def confirmar_usuario(usuario:dict):
+def confirmar_usuario(usuario:dict,reescribir:bool = False):
     '''Lanzara un ValueError en caso de error'''
     #devuelve la edad en vez de su fecha de nacimiento
-    if formato_fecha(usuario['edad']):
-        usuario['edad'] = formato_fecha(usuario['edad'])
-    else:
-        raise ValueError
+    if not reescribir:
+        if formato_fecha(usuario['edad']):
+            usuario['edad'] = formato_fecha(usuario['edad'])
+        else:
+            raise ValueError
     #RegEx
     re_nombre = r'[a-zA-z]{3,12}'
     re_email = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
@@ -32,8 +33,19 @@ def confirmar_usuario(usuario:dict):
         or not re.match(re_nombre,usuario['apellidos']) \
         or not re.match(re_email,usuario['email']) \
         or not re.match(re_password,usuario['contraseña']) \
-        or not re.match(re_tfno,usuario['telefono']):
+        or not re.match(re_tfno,str(usuario['telefono'])):
         raise ValueError
     else:
+        usuario['contraseña'] = encriptar_contraseña(usuario['contraseña'])
         return 
     
+def encriptar_contraseña(contraseña:str):
+    sal = os.urandom(32) #Secuencia de bytes aleatorios
+    encriptado = hashlib.pbkdf2_hmac('sha256',contraseña.encode('utf-8'),sal,50)
+    return [encriptado.hex(),sal.hex()]
+
+def confirmar_contraseña(lista_pass:list,input:str) -> bool:
+    sal = bytes.fromhex(lista_pass[1]) #Lo convertimos de vuelta a byte
+    contraseña_original = lista_pass[0]
+    contraseña_input = hashlib.pbkdf2_hmac('sha256',input.encode('utf-8'),sal,50).hex() #usa lo mismo para convertirla a hex
+    return contraseña_input == contraseña_original #Compara los hex

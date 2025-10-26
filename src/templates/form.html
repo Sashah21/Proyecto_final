@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
 </head>
@@ -26,7 +24,7 @@
                     </div>
                     
                     <div class="body-form">
-                        <input type="text" name="tfno" id = "tfno" pattern="[0-9]{9}" placeholder="Numero de telefono*" title="Numero de telefono" required>
+                        <input type="text" name="telefono" id = "tfno" pattern="[0-9]{9}" placeholder="Numero de telefono*" title="Numero de telefono" required>
                     </div>
                     <div class="body-form date-form">
                         <label id="date-str">Fecha de nacimiento<input type="date" name="edad" id="age" title="Fecha de nacimiento" required></label>

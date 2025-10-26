@@ -5,6 +5,8 @@ body{
 h1{
     color: #ffffff;
     background-color: #009879;
+    width: 80%;
+    margin: 0 5%;
     padding: 0.5% 0.5%;
     border-radius: 12px;
     border-color: #d6d6d6;
@@ -13,7 +15,8 @@ h1{
 /*Tabla - general*/
 .usuarios {
     overflow: auto;
-    width: 100%;
+    margin: 0 5%;
+    width: 80%;
 }
 .usuarios table {
     width: 100%;
@@ -23,13 +26,14 @@ h1{
     font-size: 0.95em;
     min-width: 400px;
     text-align: left;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); 
+    box-shadow: 0 0 20px #00000026; 
 }
 .usuarios caption {
     caption-side: top;
     text-align: left;
 }
 .usuarios th {
+    padding: 5px 15px;
     background-color: #009879; /* Un color primario (verde oscuro limpio) */
     color: #ffffff;
     text-align: left;
@@ -37,8 +41,7 @@ h1{
 }
 /*Tabla - Redondeo de esquinas*/
 .usuarios table thead tr th:first-of-type{
-    border-top-left-radius: 12px;
-    padding: 0.5% 0.5%;}
+    border-top-left-radius: 12px;}
 .usuarios table thead tr th:last-of-type{
     border-top-right-radius: 12px;
     padding: 0.5% 0.5%;}
@@ -59,6 +62,24 @@ h1{
     background-color: #f3f3f3;
     color: #000000;
 }
+.buttons a{
+    margin: 4px 0 0 0;
+}
+.buttons {
+    width: 20%;
+    min-width: 20%;
+}
+td#no_data_message {
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
+}
+/*Tabla - Ajuste de filas* - edit*/
+td.formtd{
+    padding: 1% 1%;
+}
+td.formtd input{
+    width: 100%;
+}
 /*Boton Crear usuario*/
 a#crear_usuario {
     /*Eliminar formato de enlace*/
@@ -76,7 +97,74 @@ a#crear_usuario {
 #crear_usuario:hover{
     background-color: #2a1b69;
 }
-td#no_data_message {
-    font-family: Verdana, sans-serif;
-    font-weight: bold;
+/*Boton volver al menu*/
+a#volver_menu{
+    /*Eliminar formato de enlace*/
+    display: inline-block;
+    text-decoration: none;
+    background-color: #009879;
+    border: 1px solid #056955;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+a#volver_menu:hover{
+    background-color: #05745d;
+    border-color: #075545;
+}
+/*Boton Editar*/
+input#edit_confirm{
+    width: 100%;
+}
+a.edit_btn {
+    /*Eliminar formato de enlace*/
+    display: inline-block;
+    text-decoration: none;
+    /*___________*/
+    background-color: #969696;
+    width: 100%;
+    font-size: 80%;
+    text-align: center;
+    color: white;
+    border: none;
+    padding: 6px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+input.edit_btn{
+    background-color: #392594;
+    width: 68%;
+    font-size: 80%;
+    text-align: center;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+a#confirm_btn{
+    background-color: #392594;
+    width: 68%;
+    font-size: 80%;
+    text-align: center;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+a#confirm_btn:hover{
+    background-color: #291972;
+}
+.edit_btn:hover{
+    background-color: #2a1b69;
+}
+a.edit_btn:hover{
+    background-color: #808080;
 }

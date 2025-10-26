@@ -4,7 +4,7 @@ body{
 }
 /*Formulario*/
 .form{
-    background-color: #ffffff;
+    background-color: #ffffff3d;
     margin: 5% 20%;
     padding: 2%;
     border-radius: 7px;
@@ -17,6 +17,7 @@ section{
 .header-form{
     font-family: sans-serif;
     padding-left: 7%;
+    color: #ffffff;
 }
 /*Formulario - campos*/
 .body-form{
@@ -46,6 +47,7 @@ section{
 .body-form input[type="submit"]{
     background-color: #0069A7;
     color: #ffffff;
+    border: none;
     width: 70%;
     margin: 0 5% 0 0 ;
 }
@@ -57,6 +59,7 @@ section{
 }
 label#date-str{
     font-family: sans-serif;
+    color: #ffffff;
 }
 /*Formulario - error*/
 .alerta-error {

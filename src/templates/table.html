@@ -6,30 +6,89 @@
     </head>
     <body>
         <h1>Usuarios en el sistema.</h1>
-        <div class="usuarios" role="region" tabindex="0">
+        <div class="usuarios">
             <table>
                 <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Apellidos</th>
-                        <th>Email</th>
-                        <th>Contraseña</th>
-                        <th>Telefono</th>
-                        <th>Edad</th>
+                        {% if edit_user %}
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Email</th>
+                            <th>Contraseña</th>
+                            <th>telefono</th>
+                            <th>edad</th>
+                            <th class="buttons"></th>
+                        {% elif delete_user %}
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th class="buttons"></th>
+                        {% else %}
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Email</th>
+                            <th class="buttons"></th>
+                        {% endif %}
                     </tr>
                 </thead>
                 {% if usuarios%}
                 <tbody>
-                    {% for usuario in usuarios %}
-                    <tr>
-                        <td>{{usuario.nombre}}</td>
-                        <td>{{usuario.apellidos}}</td>
-                        <td>{{usuario.email}}</td>
-                        <td>{{usuario.contraseña}}</td>
-                        <td>{{usuario.telefono}}</td>
-                        <td>{{usuario.edad}}</td>
-                    </tr>
-                    {% endfor %}
+                    {% if not edit_user and not delete_user %}
+                        {% for usuario in usuarios %}
+                        <tr>
+                            <td>{{usuario.nombre}}</td>
+                            <td>{{usuario.apellidos}}</td>
+                            <td>{{usuario.email}}</td>
+                            <td class="buttons">
+                                <a href="{{ url_for('lista_usuarios',method='edit',user=usuario.id) }}" class="edit_btn">Editar</a>
+                                <a href="{{ url_for('lista_usuarios',method='delete',user=usuario.id) }}" class="edit_btn">Eliminar</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    {% elif edit_user %}
+                        {% set usuario_encontrado = usuarios | selectattr('id','==', edit_user) | first %}
+                        {% if usuario_encontrado %}
+                        <tr>
+                        <form action="{{ url_for('lista_usuarios') }}" method="GET">
+                            <td class="formtd"><input type="text" name="nombre" id = "name" placeholder="Nombre*" title="Nombre" value="{{usuario_encontrado.nombre}}"></td>
+                            <td class="formtd"><input type="text" name="apellidos" id = "surname" placeholder="Apellidos*" title="Apellidos" value="{{usuario_encontrado.apellidos}}"></td>
+                            <td class="formtd"><input type="email" name="email" id = "email" placeholder="Correo electronico*"title="Correo electronico" value="{{usuario_encontrado.email}}"></td>
+                            <td class="formtd"><input type="password" name="contraseña" id = "contraseña" placeholder="Contraseña*" title="Contraseña" required></td>
+                            <td class="formtd"><input type="text" name="tfno" id = "tfno" pattern="[0-9]{9}" placeholder="Numero de telefono*" title="Numero de telefono" value="{{usuario_encontrado.telefono}}" ></td>
+                            <td class="formtd"><input type="number" name="edad" id="edad" pattern="[0-9]{2}" placeholder="Edad*" title="Edad" value="{{usuario_encontrado.edad}}"></td>
+                            <td class="buttons formtd">
+                                <div>
+                                    <input class="edit_btn" id="edit_confirm" type="submit" value="Confirmar">
+                                    <a href="{{ url_for('lista_usuarios') }}" class="edit_btn">Cancelar</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <input type="hidden" name="method" value="edit">
+                        <input type="hidden" name="user" value="{{ usuario_encontrado.id }}">
+                        <input type="hidden" name="confirm" value="1">
+                        </form>
+                            {% if error %}
+                                <tr><td colspan="7" id="no_data_message">Ha habido un error en la modificacion del usuario</td></tr>
+                            {% endif %}
+                        {% else %}
+                        <td colspan="7" id="no_data_message">No se han encontrado usuarios en el sistema</td>
+                        {% endif %}
+                    {% else %}
+                        {% set usuario_encontrado = usuarios | selectattr('id','==', delete_user) | first %}
+                        <tr><td colspan="7" id="no_data_message">¿Esta seguro de borrar a {{usuario_encontrado.nombre}} {{usuario_encontrado.apellidos}}?</td></tr>
+                        <tr>
+                            <td>
+                                <a href="{{ url_for('lista_usuarios') }}" class="edit_btn">Cancelar</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('lista_usuarios',method ='delete',user=usuario_encontrado.id,confirm = 1) }}" id="confirm_btn" class="edit_btn">Confirmar</a>
+                            </td>
+                            <td colspan="5"></td>
+                        </tr>
+                    {% endif %}
                 </tbody>
                 {% else %}
                 <tbody>
@@ -39,8 +98,14 @@
                 </tbody>
                 {% endif %}
             </table>
-            <a href="{{ url_for('formulario_usuario')}}" id="crear_usuario">Crear un usuario</a>
+            {% if not edit_user and not delete_user %}
+                <a href="{{ url_for('formulario_usuario')}}" id="crear_usuario">Crear un usuario</a>
+                <a href="{{ url_for('root')}}" id="volver_menu">Volver al menu.</a>
+            {% else %}
+
+            {% endif %}
+            
         </div>
-        <div style="margin-top:8px"></div>
+            <div style="margin-top:8px"></div>
     </body>
 </html>

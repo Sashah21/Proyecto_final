@@ -1,29 +1,122 @@
 [
     {
-        "nombre": "john",
-        "apellidos": "Doe",
-        "email": "example@gmail.com",
-        "contrase\u00f1a": "password",
-        "telefono": 123456789,
-        "edad": 33,
+        "nombre": "Alexander",
+        "apellidos": "Cerda Morales",
+        "email": "riojasdesmuro@gmail.com",
+        "contrase\u00f1a": [
+            "0926f4a11b8186a9e0c30b9e2f00dc9dc75d74533a42c11f9e5910834bf1c117",
+            "493d19228762b5c2c3f5e4f7e6982c718b7785277d0d542a6dbc3971beae2d7a"
+        ],
+        "telefono": "123456789",
+        "edad": "23",
         "id": 1
     },
     {
-        "nombre": "juana",
-        "apellidos": "Doedoe",
-        "email": "example2@gmail.com",
-        "contrase\u00f1a": "contra",
-        "telefono": 987654321,
-        "edad": 22,
+        "nombre": "Borja",
+        "apellidos": "Pavon Millan",
+        "email": "darnish24@gmail.com",
+        "contrase\u00f1a": [
+            "a2fc3c6635a8e0ed13ffbc282ecbf988d95b84316e33573d58719de007c21185",
+            "7dd964c39b83974565689131bc5ad23d8d0ba9f40a161fcf3530b795509fdb3a"
+        ],
+        "telefono": "455625678",
+        "edad": 41,
         "id": 2
     },
     {
-        "nombre": "Aessaneh",
-        "apellidos": "nomas",
-        "email": "aessaneh@gmail.com",
-        "contrase\u00f1a": "asdsaasdsdasda",
-        "telefono": "123456789",
-        "edad": "2025-10-08",
+        "nombre": "Sofia",
+        "apellidos": "Vargas Lopez",
+        "email": "anonimo_123@servicioseguro.org",
+        "contrase\u00f1a": [
+            "8d10dd622053feb6fb814994dec5747db9efdf14d2d4990eb8042af8e22737c7",
+            "e6e1ef6e7c2c6d479e4d50d6f682c59b5b7398262849b66bdaf8c9409be561b9"
+        ],
+        "telefono": "768904325",
+        "edad": 27,
         "id": 3
+    },
+    {
+        "nombre": "Andres",
+        "apellidos": "Berrenc",
+        "email": "milasnid@educa.gov",
+        "contrase\u00f1a": [
+            "90adc392e647d5f0a1d13e03e77ed464788b76143562eea07f3199466ec598f1",
+            "b653a4e778390735a252e8bdf927777abbb322287653ab77d13002cf9a45e178"
+        ],
+        "telefono": "123456789",
+        "edad": 17,
+        "id": 4
+    },
+    {
+        "nombre": "Miguel Angel ",
+        "apellidos": "Herrera Gomez",
+        "email": "infozaragoza@sectoryservicios.zgz",
+        "contrase\u00f1a": [
+            "1eb19ae556b38ba8df18c74cb1f860f6a3d760f36efa7225918e8ca478305ac2",
+            "ee715794dba0561247eeef35d4a2b2c593779258e57380c049c33de3151ac01a"
+        ],
+        "telefono": "657891274",
+        "edad": 26,
+        "id": 5
+    },
+    {
+        "nombre": "Ricardo Manuel",
+        "apellidos": "Rojas Diaz",
+        "email": "contacto@pruebas.info",
+        "contrase\u00f1a": [
+            "4c3883077c72fca0cd159c3ddcef13b041635e6d95ff8e84b183d7be0c9dba9f",
+            "661c2837c9eb9c4e6117815c0c7ef8bbf6768bcba76bbc3df2bc1d5af9dcfce5"
+        ],
+        "telefono": "761290562",
+        "edad": 25,
+        "id": 6
+    },
+    {
+        "nombre": "Andrea",
+        "apellidos": "Soto Castillo",
+        "email": "usuario.prueba@dominiofalso.com",
+        "contrase\u00f1a": [
+            "b344a32ecfdccbc11be58cdf07c795ac114ae77b2a9d1d2e4d93b6051cd77bdb",
+            "cfb92d4dd15bcda599ed082f37d8d9f0f6744523fefb50b9ad73552e6edfd657"
+        ],
+        "telefono": "102938475",
+        "edad": 26,
+        "id": 7
+    },
+    {
+        "nombre": "Daniel Jesus ",
+        "apellidos": "Ortiz Morales",
+        "email": "soporte_test@prueba-software.net",
+        "contrase\u00f1a": [
+            "9c2ceeacc285be228661e02fd0061176734241741c5f5b7cedb90246e7e9b6a4",
+            "12b07b1dacb94f3e6b75b11fbe7e1ead6d06457400623a365e6e240ce831832b"
+        ],
+        "telefono": "673956872",
+        "edad": 26,
+        "id": 8
+    },
+    {
+        "nombre": "Natalia Belen",
+        "apellidos": "Herrera Bravo",
+        "email": "invitado.temporal@midominio.tech",
+        "contrase\u00f1a": [
+            "3b4febc0b5e9a1dacf107d66215d3ce5253d833feee700f848a2abf469e6bed0",
+            "ab153585b0334ae48849de20155fea60df25fe72bf7a81844bb99235a283b146"
+        ],
+        "telefono": "213890234",
+        "edad": 26,
+        "id": 9
+    },
+    {
+        "nombre": "Hector Fabian",
+        "apellidos": "Moya Campos",
+        "email": "test_api@miempresa.dev",
+        "contrase\u00f1a": [
+            "1505e051e3b7c2a2463181fff6c51b159856c1d104fe88e8d9faa2d7c3ee21e9",
+            "69a811d87991533a732e1a1e9a0bc8bc9ae051fc6e200705e341541e4a473b6c"
+        ],
+        "telefono": "573282957",
+        "edad": 37,
+        "id": 10
     }
 ]
